@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Validação de E-mail</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4338ca;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Validação de E-mail</h2>
+    <input type="email" id="email" placeholder="Digite seu e-mail">
+    <button onclick="enviarCodigo()">Enviar Código</button>
+    
+  <div id="codigoArea" style="display: none;">
+      <input type="text" id="codigo" placeholder="Digite o código">
+      <button onclick="validarCodigo()">Validar</button>
+   </div>
+
+    <p id="mensagem"></p>
+  </div>
+
+  <script>
+    let codigoGerado = "";
+
+    function enviarCodigo() {
+      const email = document.getElementById("email").value;
+      if (!email) {
+        alert("Digite um e-mail válido.");
+        return;
+      }
+
+      // Simula o envio de um código de 6 dígitos
+      codigoGerado = Math.floor(100000 + Math.random() * 900000).toString();
+      console.log("Código enviado para o e-mail:", email, "=>", codigoGerado);
+
+      document.getElementById("codigoArea").style.display = "block";
+      document.getElementById("mensagem").textContent = "Um código foi enviado para seu e-mail (simulado).";
+    }
+
+    function validarCodigo() {
+      const codigoDigitado = document.getElementById("codigo").value;
+      if (codigoDigitado === codigoGerado) {
+        document.getElementById("mensagem").textContent = "✅ E-mail validado com sucesso!";
+        document.getElementById("mensagem").style.color = "green";
+      } else {
+        document.getElementById("mensagem").textContent = "❌ Código incorreto. Tente novamente.";
+        document.getElementById("mensagem").style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
