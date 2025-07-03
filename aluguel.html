@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Finalizar Aluguel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Finalizar Aluguel</header>
+  <main>
+    <h2>Dados do Motorista</h2>
+    <form onsubmit="finalizarAluguel(event)">
+      <input type="text" id="nome" placeholder="Nome do Motorista" required>
+      <input type="text" id="cnh" placeholder="Número da CNH" required>
+      <button type="submit">Finalizar Pedido</button>
+    </form>
+    <p id="mensagem"></p>
+  </main>
+  <script>
+    function finalizarAluguel(event) {
+      event.preventDefault();
+      document.getElementById("mensagem").innerText = "✅ Aluguel efetuado com sucesso!";
+    }
+  </script>
+</body>
+</html>
