@@ -1,62 +1,38 @@
 body {
+    background: linear-gradient(to right, lightgray, white); /* Fundo degradê de cinza claro para branco */
+    font: normal 15pt Arial; /* Define a fonte do corpo do texto */
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff9c4; /* amarelo clarinho */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   header {
-    background-color: #1976d2; /* azul */
-    color: white;
-    padding: 15px;
-    text-align: center;
-    position: fixed;
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    background: cornflowerblue; /* Fundo azul claro */
     width: 100%;
-    top: 0;
-  }
-  
-  main {
-    margin-top: 80px;
     padding: 20px;
   }
   
-  .login-container {
-    max-width: 300px;
-    margin: 100px auto;
-    background-color: #fffde7;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+  section {
+    background: white; /* Fundo branco da caixa de contagem */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 15px;
+    width: 500px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.329); /* Sombra ao redor */
   }
   
-  .login-container input {
-    display: block;
-    margin: 10px auto;
-    padding: 8px;
-    width: 90%;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #1976d2;
+  footer {
     color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .veiculos {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .carro {
-    background: #fff;
-    padding: 10px;
-    border: 1px solid #ccc;
     text-align: center;
-  }
-
-  img {
-    width: 2300px;
+    font-style: italic;
+    background: cornflowerblue;
+    width: 100%;
+    padding: 10px;
+    position: fixed; /* Fixa o rodapé na parte inferior da tela */
+    bottom: 0;
   }
   
